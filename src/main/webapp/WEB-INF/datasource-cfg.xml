@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+   <!-- Initialization for data source -->
+   <bean id="dataSource" 
+      class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="${connection.driver}"></property>
+      <property name="url" value="${connection.url}"></property>
+      <property name="username" value="${connection.username}"></property>
+      <property name="password" value="${connection.password}"></property>
+   </bean>
+	
+	<bean
+	  class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+	  <property name="exceptionMappings">
+		<props>
+			<prop key="org.springframework.transaction.CannotCreateTransactionException">Error</prop>
+			<prop key="org.hibernate.exception.GenericJDBCException">Error</prop>
+		</props>
+	  </property>
+	</bean>
+	
+	<!-- sử dụng các annotation (@Autowired, @Required,...) -->
+    <context:annotation-config />
+ 
+    <!-- sessionFactory uses dataSource -->
+    <bean id="mySessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="annotatedClasses">
+        	<list>
+        		<value>manageproject.entities.StudentBean</value>
+        		<value>manageproject.entities.ProjectBean</value>
+        		<value>manageproject.entities.TeacherBean</value>
+        		<value>manageproject.entities.ConfigTimeBean</value>
+        		<value>manageproject.entities.AssignmentBean</value>
+        		<value>manageproject.entities.TermBean</value>
+        		<value>manageproject.entities.EduProgramBean</value>
+        		<value>manageproject.entities.SubmitProjectBean</value>
+        		<value>manageproject.entities.ClassBean</value>
+        		<value>manageproject.entities.SubjectBean</value>
+        		<value>manageproject.entities.DegreeBean</value>
+        		<value>manageproject.entities.TeacherAccountBean</value>
+        	</list>
+        </property>
+        
+        <property name="hibernateProperties">
+        	<props>
+              <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+              <prop key="hibernate.show_sql">true</prop>
+              <prop key="hibernate.connection.pool_size">10</prop>
+              <prop key="hibernate.c3p0.timeout">300</prop>
+            </props>
+        </property> 
+    </bean>
+    
+   
+</beans>

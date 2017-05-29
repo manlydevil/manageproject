@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="studentDao" class="manageproject.dao.impl.StudentDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
+	<bean id="termDao" class="manageproject.dao.impl.TermDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
+	<bean id="eduProgramDao" class="manageproject.dao.impl.EduProgramDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
+	<bean id="teacherDao" class="manageproject.dao.impl.TeacherDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
+	<bean id="configTimeDao" class="manageproject.dao.impl.ConfigTimeDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
+	<bean id="projectDao" class="manageproject.dao.impl.ProjectDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
+	<bean id="classDao" class="manageproject.dao.impl.ClassDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
+	<bean id="subjectDao" class="manageproject.dao.impl.SubjectDaoImpl">
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
+</beans>
