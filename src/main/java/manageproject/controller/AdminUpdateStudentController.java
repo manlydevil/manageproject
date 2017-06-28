@@ -42,7 +42,7 @@ import manageproject.validate.UpdateInforValidate;
  */
 @Controller
 public class AdminUpdateStudentController {
-	12345
+	123456
 	@Autowired
 	private StudentLogic studentLogic;
 	@Autowired
