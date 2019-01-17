@@ -51,4 +51,11 @@ public interface ClassDao {
 	 * @return int
 	 */
 	public int getClassID(String className);
+
+	/**
+	 * Phương thức lấy classID
+	 * @param className
+	 * @return int
+	 */
+	public int getClassID1(String className);
 }
