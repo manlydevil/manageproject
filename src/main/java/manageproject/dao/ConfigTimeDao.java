@@ -81,4 +81,12 @@ public interface ConfigTimeDao {
 	 * @return boolean
 	 */
 	public boolean checkExistedConfig111(int configTimeID, int termID, int eduProgramID);
+
+	/**
+	 * Kiểm tra đã tồn tại cấu hình thời gian với học kì và CTDT này chưa
+	 * @param termID mã học kì
+	 * @param eduProgramID mã chương trình đào tạo
+	 * @return boolean
+	 */
+	public boolean checkExistedConfig222(int configTimeID, int termID, int eduProgramID);
 }
