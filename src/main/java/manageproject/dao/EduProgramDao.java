@@ -62,5 +62,12 @@ public interface EduProgramDao {
 	 * @return
 	 */
 	public int getEduProgramID(String eduProgramName);
-	
+
+	/**
+	 * Lấy ra mã CTDT
+	 * @param eduProgramName
+	 * @return
+	 */
+	public int getEduProgramID111(String eduProgramName);
+
 }
