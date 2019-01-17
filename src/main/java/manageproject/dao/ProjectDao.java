@@ -110,4 +110,12 @@ public interface ProjectDao {
 	 * @return booleans
 	 */
 	public boolean changeTeacherPublic(int projectID, int teacherPublic);
+
+	/**
+	 * Phương thức thay đổi quyền chia sẻ của giảng viên
+	 * @param projectID mã đồ án
+	 * @param teacherPublic chia sẻ
+	 * @return booleans
+	 */
+	public boolean changeTeacherPublic111(int projectID, int teacherPublic);
 }
