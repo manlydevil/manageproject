@@ -166,4 +166,11 @@ public interface StudentDao {
 	 * @return int
 	 */
 	public int getIDByStudentNumber(String studentNumber);
+
+	/**
+	 * Lấy ra id sinh viên theo mã sinh viên
+	 * @param studentNumber mã sinh viên
+	 * @return int
+	 */
+	public int getIDByStudentNumber111(String studentNumber);
 }
